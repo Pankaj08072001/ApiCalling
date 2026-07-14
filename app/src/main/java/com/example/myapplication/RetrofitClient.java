@@ -3,9 +3,15 @@ package com.example.myapplication;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class RetrofitClient {
+public final class RetrofitClient {
+
+    private static final String BASE_URL = "https://dummyjson.com/";
+
     private static Retrofit retrofit;
-    private static final String BASE_URL = "curl https://reqres.in/api/users?page=2";
+
+    private RetrofitClient() {
+        // Prevent object creation
+    }
 
     public static Retrofit getRetrofit() {
         if (retrofit == null) {
@@ -14,6 +20,7 @@ public class RetrofitClient {
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
+
         return retrofit;
     }
 }
