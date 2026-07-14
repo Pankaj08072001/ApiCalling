@@ -3,101 +3,99 @@ package com.example.myapplication;
 import java.util.ArrayList;
 
 public class Model {
-    private String page;
-    private String per_page;
 
-    private String total;
+    private ArrayList<Product> products;
+    private int total;
+    private int skip;
+    private int limit;
 
-    private String total_pages;
-
-
-    ArrayList<Data> data;
-
-    public String getPage() {
-        return page;
+    public ArrayList<Product> getProducts() {
+        return products;
     }
 
-    public void setPage(String page) {
-        this.page = page;
+    public void setProducts(ArrayList<Product> products) {
+        this.products = products;
     }
 
-    public String getPer_page() {
-        return per_page;
-    }
-
-    public void setPer_page(String per_page) {
-        this.per_page = per_page;
-    }
-
-    public String getTotal() {
+    public int getTotal() {
         return total;
     }
 
-    public void setTotal(String total) {
+    public void setTotal(int total) {
         this.total = total;
     }
 
-    public String getTotal_pages() {
-        return total_pages;
+    public int getSkip() {
+        return skip;
     }
 
-    public void setTotal_pages(String total_pages) {
-        this.total_pages = total_pages;
+    public void setSkip(int skip) {
+        this.skip = skip;
     }
 
-    public ArrayList<Data> getData() {
-        return data;
+    public int getLimit() {
+        return limit;
     }
 
-    public void setData(ArrayList<Data> data) {
-        this.data = data;
+    public void setLimit(int limit) {
+        this.limit = limit;
     }
 
-    public class Data {
-        private String id;
-        private String email;
-        private String first_name;
-        private String last_name;
-        private String avatar;
+    public static class Product {
 
-        public String getId() {
+        private int id;
+        private String title;
+        private String description;
+        private String category;
+        private double price;
+        private String thumbnail;
+
+        public int getId() {
             return id;
         }
 
-        public void setId(String id) {
+        public void setId(int id) {
             this.id = id;
         }
 
-        public String getEmail() {
-            return email;
+        public String getTitle() {
+            return title;
         }
 
-        public void setEmail(String email) {
-            this.email = email;
+        public void setTitle(String title) {
+            this.title = title;
         }
 
-        public String getFirst_name() {
-            return first_name;
+        public String getDescription() {
+            return description;
         }
 
-        public void setFirst_name(String first_name) {
-            this.first_name = first_name;
+        public void setDescription(String description) {
+            this.description = description;
         }
 
-        public String getLast_name() {
-            return last_name;
+        public String getCategory() {
+            return category;
         }
 
-        public void setLast_name(String last_name) {
-            this.last_name = last_name;
+        public void setCategory(String category) {
+            this.category = category;
         }
 
-        public String getAvatar() {
-            return avatar;
+        public double getPrice() {
+            return price;
         }
 
-        public void setAvatar(String avatar) {
-            this.avatar = avatar;
+        public void setPrice(double price) {
+            this.price = price;
+        }
+
+        public String getThumbnail() {
+            return thumbnail;
+        }
+
+        public void setThumbnail(String thumbnail) {
+            this.thumbnail = thumbnail;
         }
     }
 }
